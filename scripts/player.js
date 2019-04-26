@@ -13,7 +13,7 @@ class Player {
   getTime() {
     return this.soundObject.getTime(); // wrapper for method available on this.soundObject
   }
-  
+
   playPause (song = this.currentlyPlaying) {  //accepts one parameter: song
     if (this.currentlyPlaying !== song) {
       // Stop the currently playing sound file (even if nothing is playing)
