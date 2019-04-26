@@ -1,5 +1,5 @@
 class Player {
-  constructor () {
+  constructor () { //sets initial values for below:
     this.currentlyPlaying = album.songs[0];
     this.playState = 'stopped';
     this.volume = 80;
@@ -7,20 +7,20 @@ class Player {
   }
 
   getDuration() {
-    return this.soundObject.getDuration();
+    return this.soundObject.getDuration(); //wrapper for a method availabe on this.soundObject
   }
 
   getTime() {
-    return this.soundObject.getTime();
+    return this.soundObject.getTime(); // wrapper for method available on this.soundObject
   }
   
-  playPause (song = this.currentlyPlaying) {
+  playPause (song = this.currentlyPlaying) {  //accepts one parameter: song
     if (this.currentlyPlaying !== song) {
       // Stop the currently playing sound file (even if nothing is playing)
       this.soundObject.stop();
       // Clear classes on the song that's currently playing
       this.currentlyPlaying.element.removeClass('playing paused');
-      
+
       // Update our currentlyPlaying and playState properties
       this.currentlyPlaying = song;
       this.playState = 'stopped';
@@ -37,12 +37,12 @@ class Player {
       this.currentlyPlaying.element.removeClass('playing').addClass('paused');
     }
   }
-  
+
   skipTo (percent) {
     if (this.playState !== 'playing') { return }
     this.soundObject.setTime( (percent / 100) * this.soundObject.getDuration() );
   }
-  
+
   setVolume (percent) {
     this.volume = percent;
     this.soundObject.setVolume(percent);
@@ -50,4 +50,3 @@ class Player {
 }
 
 const player = new Player();
-
