@@ -26,6 +26,7 @@
     $('#time-control .current-time').text( currentTime );
     $('#time-control input').val(percent);
     $('#time-control .total-time').text(duration);
+    $('#time-control .total-time').text(duration);
   }, 1000);
 
   $('#volume-control input').on('input', function(event){
@@ -40,5 +41,5 @@
     const previousSong = album.songs[previousSongIndex];
     player.playPause(previousSong);
   });
-  
+
 }
