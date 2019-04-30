@@ -40,4 +40,5 @@
     const previousSong = album.songs[previousSongIndex];
     player.playPause(previousSong);
   });
+  
 }
